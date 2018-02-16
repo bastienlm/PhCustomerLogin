@@ -1,0 +1,4 @@
+app/etc/modules/PH2M_PhCustomerLogin.xml                              app/etc/modules/PH2M_PhCustomerLogin.xml
+app/code/community/PH2M/PhCustomerLogin/                              app/code/community/PH2M/PhCustomerLogin/
+app/design/adminhtml/default/default/layout/ph/customerlogin.xml      app/design/adminhtml/default/default/layout/ph/customerlogin.xml
+app/design/adminhtml/default/default/template/ph/customerlogin        app/design/adminhtml/default/default/template/ph/customerlogin

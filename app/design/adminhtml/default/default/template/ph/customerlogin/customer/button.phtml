@@ -1,0 +1,45 @@
+<?php
+/**
+ * PH2M_PhCustomerLogin
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ * @category   SwitchCustomerLogin
+ * @copyright  Copyright (c) 2018 PH2M SARL
+ * @author     PH2M SARL <contact@ph2m.com> : http://www.ph2m.com/
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ * @var $this PH2M_PhCustomerLogin_Block_Adminhtml_Customer
+ */
+?>
+
+<?php $_customer    = $this->getCustomer(); ?>
+<?php if($_customer): ?>
+    <?php $_stores      = $this->getStoreList(); ?>
+    <div class="switch-customer-login" style="text-align: center; padding:10px; background: #e5ecf2;">
+        <form action="<?php echo $this->getSubmitUrl(); ?>" method="GET" target="_blank">
+            <input type="hidden" name="customer_id" value="<?php echo $_customer->getId(); ?>">
+            <label for="login_store" style="font-size:14px;margin-bottom:5px;display:block;"><?php echo $this->__('Login to store:') ?></label>
+            <select name="login_store_id" id="login_store_id" style="margin-bottom:5px;display:block; width: 100%;">
+                <?php foreach ($_stores as $_store): ?>
+                    <?php if($this->isUserDefaultStore($_store, $_customer)): ?>
+                        <option selected value="<?php echo $_store->getId() ?>"><?php echo $this->__('%s (Default user store)', $_store->getName()) ?></option>
+                    <?php else: ?>
+                        <option value="<?php echo $_store->getId() ?>"><?php echo $_store->getName() ?></option>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            </select>
+            <button title="<?php echo $this->__('Login') ?>" type="submit" class="scalable" style="display: block;margin: 10px auto;">
+                <span>
+                    <span>
+                        <span><?php echo $this->__('Login customer') ?></span>
+                    </span>
+                </span>
+            </button>
+        </form>
+    </div>
+<?php endif; ?>
