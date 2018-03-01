@@ -1,0 +1,15 @@
+{
+  "name": "ph2m/phcustomerlogin",
+  "type": "magento-module",
+  "description": "Log in to a customer account from the administration thanks to this lite magento 1 module",
+  "homepage": "https://github.com/bastienlm/PhCustomerLogin",
+  "require": {
+    "magento-hackathon/magento-composer-installer": "*"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "http://packages.firegento.com"
+    }
+  ]
+}
