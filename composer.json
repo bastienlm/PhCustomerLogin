@@ -1,15 +1,10 @@
 {
   "name": "ph2m/phcustomerlogin",
+  "license": "GPL-3.0",
   "type": "magento-module",
   "description": "Log in to a customer account from the administration thanks to this lite magento 1 module",
   "homepage": "https://github.com/bastienlm/PhCustomerLogin",
-  "require": {
-    "magento-hackathon/magento-composer-installer": "*"
-  },
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "http://packages.firegento.com"
-    }
-  ]
+  "suggest": {
+    "magento-hackathon/magento-composer-installer": "Allows to manage this package as a dependency."
+  }
 }
